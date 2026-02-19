@@ -42,6 +42,7 @@
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         header {
@@ -378,6 +379,18 @@
         }
         
         @media (max-width: 768px) {
+            html { overflow-x: hidden; }
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.2rem 5%;
+                text-align: center;
+            }
+            .logo { font-size: 1.4rem; }
+            nav { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+            nav a { font-size: 0.8rem; }
+            .container { padding: 2.5rem 5%; }
+            h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
             .mode-selector {
                 grid-template-columns: 1fr;
             }
@@ -412,7 +425,7 @@
     <header>
         <a href="index.html" class="logo">Dreamsical Designs</a>
         <nav>
-            <a href="calculators.html">← Back to Calculators</a>
+            <a href="calculators.html">â† Back to Calculators</a>
         </nav>
     </header>
     
@@ -577,7 +590,7 @@
                     </div>
                     
                     <div class="note-box">
-                        <strong>💡 Learn More:</strong> For a detailed tutorial on designing box pleats for statement sleeves, watch 
+                        <strong>ðŸ’¡ Learn More:</strong> For a detailed tutorial on designing box pleats for statement sleeves, watch 
                         <a href="https://youtu.be/hqCeWUHUiZU?si=PrqLHjCiMbHQL2w3" target="_blank">this video tutorial</a>.
                     </div>
                     

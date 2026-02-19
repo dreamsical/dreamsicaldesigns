@@ -42,6 +42,7 @@
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         header {
@@ -417,6 +418,18 @@
         }
         
         @media (max-width: 768px) {
+            html { overflow-x: hidden; }
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.2rem 5%;
+                text-align: center;
+            }
+            .logo { font-size: 1.4rem; }
+            nav { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+            nav a { font-size: 0.8rem; }
+            .container { padding: 2.5rem 5%; }
+            h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
             .diagram-container {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -470,7 +483,7 @@
     <header>
         <a href="index.html" class="logo">Dreamsical Designs</a>
         <nav>
-            <a href="calculators.html">← Back to Calculators</a>
+            <a href="calculators.html">â† Back to Calculators</a>
         </nav>
     </header>
     
@@ -738,11 +751,11 @@
                     </div>
                     
                     <div id="calculationNote" class="note-box hidden">
-                        <strong>📌 Note:</strong> <span id="noteText">-</span>
+                        <strong>ðŸ“Œ Note:</strong> <span id="noteText">-</span>
                     </div>
                     
                     <div id="warningBox" class="warning-box hidden">
-                        <div class="warning-icon">⚠️</div>
+                        <div class="warning-icon">âš ï¸</div>
                         <div class="warning-text">
                             <strong>Warning: Insufficient Fabric Width</strong>
                             <p id="warningMessage">-</p>
