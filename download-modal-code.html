@@ -1,0 +1,413 @@
+<!-- Download Success Modal -->
+<!-- Add this HTML right before the closing </body> tag on free-resources.html -->
+
+<div id="downloadModal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        
+        <div class="modal-header">
+            <div class="success-icon">✨</div>
+            <h2>Success!</h2>
+            <p>Your resource is downloading now</p>
+        </div>
+        
+        <div class="modal-body">
+            <div class="cta-section primary-cta">
+                <h3>Want 50+ More Free Patternmaking Tutorials?</h3>
+                <a href="https://youtube.com/@Dreamsicaldesigns" class="youtube-btn" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    Subscribe on YouTube - It's Free!
+                </a>
+                <p class="sub-text">Join 3,000+ sewists learning pattern drafting</p>
+            </div>
+            
+            <div class="divider">
+                <span>Follow for Tutorial Clips</span>
+            </div>
+            
+            <div class="social-buttons">
+                <a href="https://instagram.com/dreamsicaldesigns" class="social-btn instagram" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://tiktok.com/@dreamsicaldesigns" class="social-btn tiktok" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                    TikTok
+                </a>
+            </div>
+            
+            <div class="divider">
+                <span>or</span>
+            </div>
+            
+            <div class="email-section">
+                <p class="email-label">📧 Email me when new resources are added</p>
+                <form id="emailForm" onsubmit="submitEmail(event)">
+                    <input type="email" id="emailInput" placeholder="your@email.com" required>
+                    <button type="submit" class="email-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <button class="maybe-later" onclick="closeModal()">Maybe Later</button>
+    </div>
+</div>
+
+<!-- Add this CSS to the <style> section -->
+<style>
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--gray);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--dark);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.success-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-header h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.modal-header p {
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.primary-cta {
+    text-align: center;
+}
+
+.primary-cta h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.youtube-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(175, 64, 119, 0.3);
+}
+
+.youtube-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(175, 64, 119, 0.4);
+}
+
+.sub-text {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider span {
+    padding: 0 1rem;
+    color: var(--gray);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--light);
+    color: var(--dark);
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--light);
+}
+
+.social-btn:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.social-btn.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.social-btn.tiktok:hover {
+    background: #000;
+    color: white;
+    border-color: transparent;
+}
+
+.email-section {
+    text-align: center;
+}
+
+.email-label {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+#emailForm {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#emailInput {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--light);
+    background: var(--light);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+#emailInput:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.email-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.email-btn:hover {
+    background: var(--accent);
+}
+
+.maybe-later {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background: none;
+    border: none;
+    color: var(--gray);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.maybe-later:hover {
+    color: var(--dark);
+}
+
+@media (max-width: 500px) {
+    .modal-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .social-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    #emailForm {
+        flex-direction: column;
+    }
+}
+</style>
+
+<!-- Add this JavaScript at the end before </body> -->
+<script>
+// Modal functionality
+function showDownloadModal() {
+    const modal = document.getElementById('downloadModal');
+    modal.classList.remove('hidden');
+    
+    // Set cookie so modal doesn't show again for 30 days
+    setCookie('downloadModalShown', 'true', 30);
+}
+
+function closeModal() {
+    const modal = document.getElementById('downloadModal');
+    modal.classList.add('hidden');
+}
+
+// Close modal when clicking outside
+document.getElementById('downloadModal')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Email form submission
+function submitEmail(event) {
+    event.preventDefault();
+    const email = document.getElementById('emailInput').value;
+    
+    // TODO: Send email to your backend/email service
+    // For now, just show success and close
+    alert('Thanks for subscribing! We\'ll email you when new resources are added.');
+    closeModal();
+}
+
+// Cookie helper functions
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// Modify download buttons to trigger modal
+// This function should be called when a download button is clicked
+function handleDownload(resourceName) {
+    // Trigger the actual download
+    // window.location.href = 'path-to-your-pdf.pdf';
+    // OR
+    // const link = document.createElement('a');
+    // link.href = 'path-to-your-pdf.pdf';
+    // link.download = resourceName;
+    // link.click();
+    
+    // Check if modal has been shown in last 30 days
+    if (!getCookie('downloadModalShown')) {
+        // Show modal after a brief delay to let download start
+        setTimeout(showDownloadModal, 500);
+    }
+}
+</script>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculators | Dreamsical Designs</title>
+    <style>
+        /* Custom Font Declarations */
+        @font-face {
+            font-family: 'Bodoni Moda';
+            src: url('fonts/BodoniModa-VariableFont_opsz,wght.ttf') format('truetype-variations');
+            font-weight: 300 900;
+            font-stretch: 100%;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Bodoni Moda';
+            src: url('fonts/BodoniModa-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
+            font-weight: 300 900;
+            font-stretch: 100%;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Quicksand';
+            src: url('fonts/Quicksand-VariableFont_wght.ttf') format('truetype-variations');
+            font-weight: 300 700;
+            font-style: normal;
+        }
+        
+        :root {
+            --primary: #AF4077;
+            --accent: #EE7E35;
+            --dark: #1a1a1a;
+            --light: #fef9f6;
+            --gray: #6b6b6b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .logo {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        nav a {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        h1 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .calculator-card {
+            background: white;
+            padding: 2rem;
+            border: 2px solid var(--light);
+            transition: all 0.3s ease;
+        }
+        
+        .calculator-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .calculator-card h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .calculator-card p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .calculator-card ul {
+            color: var(--gray);
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .calculator-card ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn-use {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--accent);
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-use:hover {
+            background: var(--primary);
+        }
+        
+        .coming-soon {
+            opacity: 0.6;
+            font-style: italic;
+            cursor: not-allowed;
+            background: var(--gray);
+        }
+        
+        .coming-soon:hover {
+            background: var(--gray);
+        }
+        
+        footer {
+            padding: 2rem 5%;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DY09QY9XDZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-DY09QY9XDZ");
+        window.trackEvent = function(n, p) { gtag("event", n, p); };
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Dreamsical Designs</a>
+        <nav>
+            <a href="index.html#toolkit">Toolkit</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#connect">Connect</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="page-header">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / Calculators
+            </div>
+            <h1>Pattern Calculators</h1>
+            <p class="subtitle">
+                Take the guesswork out of your sewing projects with precision calculators. 
+                Get accurate measurements for fabric yardage, circle skirts, and pleating.
+            </p>
+        </div>
+        
+        <div class="calculator-grid">
+            <div class="calculator-card">
+                <h3><img src="icons/circleskirt.png" alt="" style="width:40px;height:40px;vertical-align:middle;margin-right:8px;">Circle Skirt Calculator</h3>
+                <p>Calculate everything you need for a perfect circle skirt:</p>
+                <ul>
+                    <li>Circle radius measurement</li>
+                    <li>Maximum length based on fabric width</li>
+                    <li>Fabric yardage requirements</li>
+                    <li>Works for quarter, half, three-quarter, and full circle skirts</li>
+                </ul>
+                <a href="circle-skirt-calculator.html" class="btn-use">Use Calculator</a>
+            </div>
+            
+            <div class="calculator-card">
+                <h3><img src="icons/curtains.png" alt="" style="width:40px;height:40px;vertical-align:middle;margin-right:8px;">Box Pleat Calculator</h3>
+                <p>Calculate fabric requirements for perfectly spaced box pleats:</p>
+                <ul>
+                    <li>Simple mode: fabric width for a specific number of pleats</li>
+                    <li>Advanced mode: fabric width to fit desired attachment width</li>
+                    <li>Specify pleat width and seam allowance</li>
+                    <li>Perfect for statement sleeves, skirts, and curtains</li>
+                </ul>
+                <a href="box-pleat-calculator.html" class="btn-use">Use Calculator</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Dreamsical Designs by Danielle. Where Engineering Meets Fabric.</p>
+    </footer>
+</body>
+</html>
