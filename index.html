@@ -511,6 +511,23 @@
             text-align: left;
         }
         
+        /* iPad landscape fix (~1024px wide) */
+        @media (min-width: 769px) and (max-width: 1100px) {
+            nav {
+                gap: 1.5rem;
+            }
+            nav a {
+                font-size: 0.8rem;
+            }
+            .stats {
+                gap: 2.5rem;
+                flex-wrap: wrap;
+            }
+            .social-links {
+                gap: 1.2rem;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             header {
@@ -659,7 +676,7 @@
                     technical skills into accessible educational content that simplifies complex patternmaking methods.
                 </p>
                 <p class="subtitle" style="margin: 0;">
-                    <strong>If you can dream it, you can make it</strong> â€” and it all starts with basic blocks from which you can transform into anything. 
+                    <strong>If you can dream it, you can make it</strong> &mdash; and it all starts with basic blocks from which you can transform into anything. 
                     My YouTube channel shows you how to create your own basic blocks, how to solve common fitting issues, 
                     and how to transform them into different designs.
                 </p>
