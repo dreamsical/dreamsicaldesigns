@@ -40,7 +40,8 @@ function submitEmail(e) {
             if (window.trackEvent) { trackEvent("email_signup", { source: "download_modal", status: "success" }); }
             document.getElementById("emailForm").style.display = "none";
             document.getElementById("emailSuccess").style.display = "block";
-            // Removed auto-close - let user close manually
+            // Auto-close after 2 seconds once email is submitted
+            setTimeout(closeModal, 2000);
         } else {
             // Error - show error message
             throw new Error("Form submission failed");
@@ -50,9 +51,10 @@ function submitEmail(e) {
         // Error handling - still show success to user (fail gracefully)
         if (window.trackEvent) { trackEvent("email_signup", { source: "download_modal", status: "error" }); }
         document.getElementById("emailForm").style.display = "none";
-        document.getElementById("emailSuccess").textContent = "✓ Thank you! We'll be in touch soon.";
+        document.getElementById("emailSuccess").textContent = "âœ“ Thank you! We'll be in touch soon.";
         document.getElementById("emailSuccess").style.display = "block";
-        // Removed auto-close - let user close manually
+        // Auto-close after 2 seconds once email is submitted
+        setTimeout(closeModal, 2000);
         // Re-enable button in case modal is opened again
         submitBtn.disabled = false;
         submitBtn.textContent = "Subscribe";
